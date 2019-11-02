@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>exe10</title>
+        <link rel="stylesheet" href="./exe13.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <script>
+            $(document).ready(function(){
+                $("#somar").click(function(){
+                    var val1 = $("input[name='gender1']:checked").val();
+                    var val2 = $("input[name='gender2']:checked").val();
+                    var val3 = $("#SLC option:selected").val();
+                    var Num1 = parseFloat(val1);
+                    var Num2 = parseFloat(val2);
+                    var Num3 = parseFloat(val3);
+                    if( Number.isNaN(Num1)) Num1 = 0;
+                    if( Number.isNaN(Num2)) Num2 = 0;
+                    if( Number.isNaN(Num3)) Num3 = 0;
+                    var soma = (Num1 + Num2) * (Num3 / 100);
+                    alert( soma + "   Text: aaa" + $("#test").text());
+                    $("#result").text("R$" + soma);
+                });
+            });
+        </script>
+        <div class="jumbotron text-center">
+            <h1>Cardapio</h1>
+        </div>
+        <div class="box container ">
+            <div class="row">
+                <div class="container ajuste2">
+                    <div class="col-sm-9 ">
+                        <h3>Entrada</h3>
+                        <p><input type="radio" class="botao" name="gender1" id="num1" value="15" > Espaguetoni<br></p>
+                        <p><input type="radio" class="botao" name="gender1" id="num2" value="25" > peixe<br></p>
+                        <p><input type="radio" class="botao" name="gender1" id="num3" value="35" > carne<br></p>
+                    </div>
+                    <div class="col-sm-3 ajuste">
+                        <p>R$15,00</p>
+                        <p>R$25,00</p>
+                        <p>R$35,00</p>
+                    </div>
+                </div>
+                <div class="container ajuste2">
+                    <div class="col-sm-9">
+                        <h3>Acrescimos</h3>
+                        <p><input type="radio" class="botao" name="gender2" id="num4" value="5" > salada<br></p>
+                        <p><input type="radio" class="botao" name="gender2" id="num5" value="7" > verduras<br></p>
+                        <p><input type="radio" class="botao" name="gender2" id="num6" value="3" > farofa<br></p>
+                        <p><input type="radio" class="botao" name="gender2" id="num7" value="12" > fritas<br></p>
+                    </div>
+
+                    <div class="col-sm-3 ajuste">
+                            <p>R$5,00</p>
+                            <p>R$7,00</p>
+                            <p>R$3,00</p>
+                            <p>R$12,00</p>
+                    </div>
+                </div>
+                <br><br>
+                <br><br>
+                <div class="pagar text-center">
+                    <h5 class="logo">Convenio</h5>
+                    <br>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">informe</label>
+                        <select  class="form-control" id="SLC">
+                            <option value="100"  >Não possui convenio</option>
+                            <option value="90"  selected="selected">Avangers - Os Vingadores</option>
+                            <option value="90" >The Enterprise - A empresa</option>
+                            <option value="90" >Fsociety</option>
+                            <option value="90" >A 4° empresa</option>
+                        </select>
+                    </div>
+                    <br><br>
+                    <br><br>
+                    <button type="button" id="somar" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Total a pagar
+                    </button>
+                        <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title" id="exampleModalLabel">Total a pagar</h2>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                      <h1 id="result" class="resultado"></h1>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Comentarios:  </label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                  </div>
+            </div>
+        </div>
+    </body>
+</html>

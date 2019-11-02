@@ -1,0 +1,80 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+.logo{
+    position: relative;
+    user-select: none;
+    text-decoration: none;
+    letter-spacing: 10px;
+    font-weight: 100;
+    border: none;
+    font-stretch: wider;
+    text-transform: uppercase;
+}
+.logo2{
+    position: relative;
+    user-select: none;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: 100;
+    border: none;
+    font-stretch: wider;
+    text-transform: uppercase;
+}
+.box-logo{
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.lista{
+    margin: 30px;
+    background-color: white;
+    display: inline-flex;
+    list-style: none;
+}
+.lista li{
+    margin: 10px;
+}
+.imagem2{
+    width: 150px;
+    height: 75px;
+    margin: 0px 0px;
+    padding: 0px;
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+}
+.efeito:before{
+
+    transition: all 150ms ease-in;
+    height: 75px;
+}
+.lista li:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.box2{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    width: 150px;
+    height: 30px;
+    border: 0;
+    text-align: center;
+}

@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>prova exe 1 </title>
+        <link rel="stylesheet" href="./exe1.css">
+    </head>
+    <script>
+        var i=0;
+        var arr = [];
+        var j, y=0;
+        function media(){
+            y++;
+            Array.prototype.insert = function() {
+                i++;
+                item = parseFloat(document.getElementById("x1").value);
+                if (Number.isNaN(item)){
+                    item = 0; 
+                 }
+                this.splice(i, 0, item);
+                return this;
+            }
+            
+            console.log(arr.insert(i, 0));
+
+            document.getElementById("demo").innerHTML = arr;
+
+            var total = arr.reduce(function(anterior, atual) {
+                return anterior + atual;
+            });
+            total = total / y;
+          
+            if (Number.isNaN(total)){
+                total = 0; 
+            }
+            document.getElementById('result').value =  total;
+         }
+        
+
+    </script>
+    <body id="background">
+        <div class="box">
+            <input type="number" id="x1">
+            <button onclick="media()">Média</button>
+            valores
+            <input class="box2" type="number" id="result" readonly>
+            <p id="demo"></p>
+        </div>
+        
+    </body>
+</html>

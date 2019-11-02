@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prova teste</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./provateste.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <script>
+            /*
+            function quiz(texto, escolha, resposta){
+                this.texto = texto;
+                this.escolha = escolha;
+                this.resposta = resposta;
+                
+            }
+            quiz.prototype.currectAnswer = function(escolha){
+                return escolha === this.perguntas;
+            }
+            function pontuacao(){
+                this.ponto = 0;
+                this.pergunta = pergunta;
+                this.perguntaIndex = 0;
+            }
+            pontuacao.prototype.get
+            */
+            var perg = [ " 1 "," 2 "," 3 "," 4 "," 5 "," 6 "," 7 "," 8 "," 9 "," 10 "];
+            var v = [ "resp1","resp2","resp3","resp4","resp5","resp6","resp7","resp8","resp9","resp10","resp11","resp12","resp13","resp14","resp15","resp16","resp17","resp18","resp19","resp20","resp21","resp22","resp23","resp24","resp25","resp26","resp27","resp28","resp29","resp30","resp31","resp32","resp33","resp34","resp35","resp36","resp37","resp38","resp39","resp40"];
+            var a=0, b=1, c=2, d=3, i=0, count=0, x=0;
+            var r = [ 1,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0];
+            var pontos=0, count2=0;
+            //$("#p1").css("color", "red")
+            $(document).ready(function(){
+                $("#btn1").click(function(){    
+                    if( r[a + i] == 1){
+                        $("#btn1").css("background-color", "rgba(65, 124, 65, 0.685)");
+                        pontos++;
+                    }
+                    else{
+                        $("#btn1").css("background-color", "rgba(148, 36, 36, 0.685)");
+                        count2++;
+                    }
+                });
+                $("#btn2").click(function(){        
+                    if( r[b + i] == 1){
+                        $("#btn2").css("background-color", "rgba(65, 124, 65, 0.685)");
+                        pontos++;
+                    }
+                    else{
+                        $("#btn2").css("background-color", "rgba(148, 36, 36, 0.685)");
+                        count2++;
+                    }
+                });
+                $("#btn3").click(function(){        
+                    if( r[c + i] == 1){
+                        $("#btn3").css("background-color", "rgba(65, 124, 65, 0.685)");
+                        pontos++;
+                    }
+                    else{
+                        $("#btn3").css("background-color", "rgba(148, 36, 36, 0.685)");
+                        count2++;
+                    }
+                });
+                $("#btn4").click(function(){        
+                    if( r[d + i] == 1){
+                        $("#btn4").css("background-color", "rgba(65, 124, 65, 0.685)");
+                        pontos++;
+                    }
+                    else{
+                        $("#btn4").css("background-color", "rgba(148, 36, 36, 0.685)");
+                        count2++;
+                    }
+                });
+                
+                $("#somar").click(function(){
+                    i = i + 4;
+                    if( i + d >= 40){
+                        $("#btn2").hide();
+                        $("#btn3").hide();
+                        $("#btn4").hide();
+                        $("#somar").hide();
+                        $("#btn1").text(pontos + " pontos");
+                        $("#perguntas").text("FIM");
+                    }
+                    else{
+                        if(count == 0){
+                            i = 0;
+                            count++;
+                        }
+                        $("#perguntas").text("" + perg[x]);
+                        x++;
+                        $("#btn1").css("background-color", "rgba(200, 200, 200, 0.685)");
+                        $("#btn2").css("background-color", "rgba(200, 200, 200, 0.685)");
+                        $("#btn3").css("background-color", "rgba(200, 200, 200, 0.685)");
+                        $("#btn4").css("background-color", "rgba(200, 200, 200, 0.685)");
+                        $("#test1").text("" + v[a + i]);
+                        $("#test2").text("" + v[b + i]);
+                        $("#test3").text("" + v[c + i]);
+                        $("#test4").text("" + v[d + i]);
+                    }
+                });
+            });
+        </script>
+        <div class="jumbotron text-center">
+            <h1>QUIZ</h1>
+        </div>
+        <div class="box container">
+            <h3 id="perguntas">Entrada</h3>
+            <div class="text-center">
+                <button type="button" class="btn btn-secondary btn-lg btn-block" id="btn1" onclick=""><p id="test1">resposta 1 </p> </button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block" id="btn2" onclick=""><p id="test2">resposta 1 </p> </button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block" id="btn3" onclick=""><p id="test3">resposta 1 </p> </button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block" id="btn4" onclick=""><p id="test4">resposta 1 </p> </button>
+            </div>
+        </div>
+        <br><br>
+        <div class="text-center">
+            <button type="button" id="somar" class="btn btn-primary " data-toggle="modal" data-target="#exampleModal">
+                    Total a pagar
+            </button>
+        </div>
+    </body>
+</html>
+
+
+
+

@@ -1,0 +1,8 @@
+body{
+    background-color: rgb(230, 215, 215);
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    background-color: rgb(255, 255, 255);
+}

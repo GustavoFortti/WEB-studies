@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>exe 8</title>
+        <link rel="stylesheet" href="./exe8.css">
+    </head>
+    <script>
+        function media(){
+            var x1 = parseFloat(document.getElementById("x1").value);
+            var x2 = parseFloat(document.getElementById("x2").value);
+            var media, img;
+            media = parseFloat(( x1 + x2) / 2);
+            alert("aaa ", x1);
+            if( media > 5){
+                document.getElementById("background").style.backgroundColor = "rgb(62, 141, 48)";
+                img = "./img/aprovado.jpg"
+            }
+            else{
+                if( media == 5){
+                    document.getElementById("background").style.backgroundColor = "rgb(180, 182, 45)";
+                    img = "./img/recuperacao.jpg"
+                }
+                else{
+                    if( media < 5){    
+                        document.getElementById("background").style.backgroundColor = "rgb(182, 45, 45)";
+                        img = "./img/reprovado.jpg"
+                    }
+                }
+            }
+            var imagem = document.getElementById("imagem");
+            imagem.src = img;
+        }
+    </script>
+    <body id="background">
+        <div class="box">
+            <input type="number" id="x1">
+            <input type="number" id="x2">
+            <button onclick="media()">Média</button>
+        </div>
+        <div>
+            <img src="" id="imagem" alt="">
+        </div>
+    </body>
+</html>

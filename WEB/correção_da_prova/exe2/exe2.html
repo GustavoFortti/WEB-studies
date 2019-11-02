@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>prova exe 2 </title>
+        <link rel="stylesheet" href="./exe2.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <script>
+         var item, valor=0, vetor = "", soma=0, i=0, media2=0;
+        function media(){
+            item =  parseFloat($("#x1").val());
+            valor = parseFloat($("#x1").val());
+            if (Number.isNaN(valor)){
+                item = "0"; 
+                valor = 0;
+            }
+            vetor = vetor + " [" + item + "]";
+            i++;
+            soma += valor; 
+            media2 = soma / i;
+            $("#demo").text(vetor);
+            $('#result').text(media2);
+            console.log(media2);
+         }
+    </script>
+    <body id="background">
+        <div class="jumbotron text-center">
+            <h1>media</h1>
+        </div>
+        <div class="box container text-center">
+            <div class="row">
+                <div class="box">
+                    <input type="number" id="x1">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" onclick="media()" data-target="#exampleModal">
+                           media
+                    </button>
+                    
+         
+                    <br></br>
+                    <br></br>
+                    <p id="demo"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="exampleModalLabel">media</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                              <h1 id="result"></h1>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>

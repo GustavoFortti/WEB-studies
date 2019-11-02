@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>exe10</title>
+        <link rel="stylesheet" href="./exe9.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <script>
+
+            //* O componente modal do BootStrap para mostrar o resultado
+            //* O componente select com BootStrap para selecionar o convênio
+
+          
+            var v = [ 0, 0, 0], v2 = [ 0, 0, 0, 0], comida2 = [5, 7, 3, 12], comida = [15, 25, 35], CO=0, soma=0, soma2=0, i=0;
+            function calcular(){
+                var e = document.getElementById("SLC");
+                var itemSelecionado = e.options[e.selectedIndex].value;
+                x = soma + soma2;
+                if(itemSelecionado > 1){
+                    x = x*0.90;
+                }
+                y = Math.round(x);
+                var total = "R$" + y + ",00";
+                document.getElementById("result").innerHTML = total;
+            }
+            function somas(){
+                for( i=0; i<3; i++){
+                    if(v[i] > 0){
+                        soma = comida[i];
+                        v[i] = 0;
+                    }
+                    else{
+                        v[i] = 0;
+                    }
+                }
+                selecionar()
+                //calcular();
+            }
+            function somas2()
+            {
+                for( i=0; i<4; i++){
+                    if(v2[i] > 0){
+                        soma2 = comida2[i];
+                        v2[i] = 0;
+                    }
+                    else{
+                        v2[i] = 0;
+                    }
+                }
+                selecionar()
+                //calcular();
+            }
+            function selecionar(){
+                var SLC = document.getElementById("SLC");
+                var selectedValue = SLC.options[SLC.selectedIndex].value;
+                //alert(selectedValue);
+                calcular();
+            }
+            function fun() {
+                
+            }
+        </script>
+        <div class="jumbotron text-center">
+            <h1>Cardapio</h1>
+        </div>
+        <div class="box container ">
+            <div class="row">
+                <div class="container ajuste2">
+                    <div class="col-sm-9 ">
+                        <h3>Entrada</h3>
+                        <p><input type="radio" class="botao" name="gender1" id="num1" value="male" onclick="somas(v[0]=1)"> Espaguetoni<br></p>
+                        <p><input type="radio" class="botao" name="gender1" id="num2" value="male" onclick="somas(v[1]=1)"> peixe<br></p>
+                        <p><input type="radio" class="botao" name="gender1" id="num3" value="male" onclick="somas(v[2]=1)"> carne<br></p>
+                    </div>
+                    <div class="col-sm-3 ajuste">
+                        
+                        <p>R$15,00</p>
+                        <p>R$25,00</p>
+                        <p>R$35,00</p>
+                    </div>
+                </div>
+                <div class="container ajuste2">
+                    <div class="col-sm-9">
+                        <h3>Acrescimos</h3>
+                        <p><input type="radio" class="botao" name="gender2" id="num4" value="male" onclick="somas2(v2[0]=1)"> salada<br></p>
+                        <p><input type="radio" class="botao" name="gender2" id="num5" value="male" onclick="somas2(v2[1]=1)"> verduras<br></p>
+                        <p><input type="radio" class="botao" name="gender2" id="num6" value="male" onclick="somas2(v2[2]=1)"> farofa<br></p>
+                        <p><input type="radio" class="botao" name="gender2" id="num7" value="male" onclick="somas2(v2[3]=1)"> fritas<br></p>
+                    </div>
+
+                    <div class="col-sm-3 ajuste">
+                            <p>R$5,00</p>
+                            <p>R$7,00</p>
+                            <p>R$3,00</p>
+                            <p>R$12,00</p>
+                    </div>
+                </div>
+                <br><br>
+                <br><br>
+                <div class="pagar text-center">
+                    <h5 class="logo">Convenio</h5>
+                    <br>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">informe</label>
+                        <select class="form-control" id="SLC" onchange="selecionar()">
+                            <option value="1"  >Não possui convenio</option>
+                            <option value="2"  selected="selected">Avangers - Os Vingadores</option>
+                            <option value="3" >The Enterprise - A empresa</option>
+                            <option value="4" >Fsociety</option>
+                            <option value="5" >A 4° empresa</option>
+                        </select>
+                    </div>
+                    <br><br>
+                    <br><br>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Total a pagar
+                    </button>
+                        <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title" id="exampleModalLabel">Total a pagar</h2>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                      <h1 id="result"></h1>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

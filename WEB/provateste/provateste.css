@@ -1,0 +1,7 @@
+body{
+    width: 100%;
+}
+.efeito{
+    list-style: none;
+    background-color: rgba(200, 200, 200, 0.685)
+}

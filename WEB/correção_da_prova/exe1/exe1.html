@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>prova exe 1 </title>
+        <link rel="stylesheet" href="./exe1.css">
+    </head>
+    
+    <body id="background">
+            <script>
+                    var item, valor=0, vetor = "", soma=0, i=0, media2=0;
+                function media(){
+                    item = document.getElementById("x1").value;
+                    valor = parseFloat(document.getElementById("x1").value);
+                    if (Number.isNaN(valor)){
+                        item = "0"; 
+                        valor = 0;
+                    }
+                    vetor = vetor + " [" + item + "]";
+                    i++;
+                    soma += valor; 
+                    media2 = soma / i;
+                    document.getElementById("demo").innerHTML = vetor;
+                    document.getElementById('result').value =  media2;
+                }
+            
+                </script>
+        <div class="box">
+            <input type="number" id="x1">
+            <button onclick="media()">Média</button>
+            valores
+            <input class="box2" type="text" id="result" readonly>
+            <p id="demo"></p>
+        </div>
+        
+    </body>
+</html>

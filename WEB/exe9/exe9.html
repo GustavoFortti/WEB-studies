@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>exe 9</title>
+        <link rel="stylesheet" href="./exe9.css">
+    </head>
+    <body>
+        <div class="box-logo">
+            <h2 class="logo" >Cardapio</h2>
+        </div>
+
+        <script>
+            var v = [ 0, 0, 0], v2 = [ 0, 0, 0, 0], comida2 = [5, 7, 3, 12], comida = [15, 25, 35], CO=0, soma=12, soma2=0, i=0;
+            
+            function calcular(){
+                var e = document.getElementById("SLC");
+                var itemSelecionado = e.options[e.selectedIndex].value;
+                x = soma + soma2;
+                if(itemSelecionado > 1){
+                    x = x*0.90;
+                }
+                document.getElementById('result').value = x;
+            }
+            function somas(){
+                for( i=0; i<3; i++){
+                    if(v[i] > 0){
+                        soma = comida[i];
+                        v[i] = 0;
+                    }
+                    else{
+                        v[i] = 0;
+                    }
+                }
+                calcular();
+            }
+            function somas2()
+            {
+                for( i=0; i<4; i++){
+                    if(v2[i] > 0){
+                        soma2 = comida2[i];
+                        v2[i] = 0;
+                    }
+                    else{
+                        v2[i] = 0;
+                    }
+                }
+                calcular();
+            }
+            function fun() {
+                document.getElementById('result').value = CO;
+            }
+        </script>
+
+        <div class="box">
+            <form class="form">
+                <ul class="lista">
+                    <li><img class="imagem2" src="./imagens/1.jpg" class="efeito" alt="" id="num1" value="0" onclick="somas(v[0]=1)"></li>
+                    <li><img class="imagem2" src="./imagens/2.jpg" class="efeito" alt="" id="num2" value="0" onclick="somas(v[1]=1)"></li>                  
+                    <li><img class="imagem2" src="./imagens/3.jpg" class="efeito" alt="" id="num3" value="0" onclick="somas(v[2]=1)"></li>
+                </ul>
+                <br><br>
+                <ul class="lista">
+                        <li><img class="imagem2" src="./imagens/4.jpg"   class="efeito" alt="" id="num4" value="0" onclick="somas2(v2[0]=1)"></li>
+                        <li><img class="imagem2" src="./imagens/5.jpg"   class="efeito" alt="" id="num5" value="0" onclick="somas2(v2[1]=1)"></li>                  
+                        <li><img class="imagem2" src="./imagens/19.webp" class="efeito" alt="" id="num6" value="0" onclick="somas2(v2[2]=1)"></li>
+                        <li><img class="imagem2" src="./imagens/7.jpg"   class="efeito" alt="" id="num7" value="0" onclick="somas2(v2[3]=1)"></li>
+                </ul>
+                <br><br>
+                <br><br>
+                <h5 class="logo">Convenio</h5>
+                <br>
+                <select name="" id="SLC">
+                    <option value="1" >Não possui convenio</option>
+                    <option value="2" selected="selected">Avangers - Os Vingadores</option>
+                    <option value="3">The Enterprise - A empresa</option>
+                    <option value="4">Fsociety</option>
+                    <option value="5">A 4° empresa</option>
+                </select>
+                <br><br>
+                <br><br>
+                <h6 class="logo2">Total a pagar</h6>
+                <input class="box2" type="number" id="result" readonly>
+                <br><br>
+            </form>
+        </div>
+
+    </body>
+</html>
