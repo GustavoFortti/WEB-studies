@@ -1,2 +1,2 @@
 # Exercicies-WEB
-HTML, CSS, Javascript, bootstrap, JQuery
+HTML | CSS | Javascript | bootstrap | JQuery | ES6
