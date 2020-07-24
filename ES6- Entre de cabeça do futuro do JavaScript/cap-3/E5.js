@@ -1,4 +1,5 @@
 /*
+
 Exercício 5 - Sem duplicações
 Faça uma função chamada removeDuplicatas 
 que recebe um array de números inteiros e
@@ -7,6 +8,7 @@ que recebe um array de números inteiros e
 Utilize as funções auxiliares: reduce e find.
 
 Exemplo: removeDuplicatas([1,2,3,3,4,5]) → [1,2,3,4,5]
+
 */
 
 const list = [0, 1, 2, 3, 3, 4, 5, 6, 7, 8];

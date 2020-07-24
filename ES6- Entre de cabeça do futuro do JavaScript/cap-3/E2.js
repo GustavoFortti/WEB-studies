@@ -1,4 +1,3 @@
-/**/
 /*
 
 Exercício 2 - Quero o dobro
@@ -9,7 +8,6 @@ com todos os valores do array original dobrados.
 Exemplo: dobrar([1,2,3]) → [2,4,6]
 
 */
-
 
 var numeros = [0, 1, 2, 3, 4, 5];
 

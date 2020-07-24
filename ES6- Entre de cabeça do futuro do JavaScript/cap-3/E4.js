@@ -1,4 +1,6 @@
 /*
+
+Exercício 4 - Equilibrio de parênteses
 Utilizando a função auxiliar reduce,
 escreva uma função chamada validaParenteses
 que avalia se os parênteses estão balanceados.
@@ -10,6 +12,7 @@ e retornar um valor booleano (true ou false).
 Exemplo: validaParenteses(')((()()())))'); → false
 Exemplo: "()()()" → true
 Exemplo: ")(" → false
+
 */
 
 var arr = [")((()()())))", "()()()", ")("];

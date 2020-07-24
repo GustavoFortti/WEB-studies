@@ -1,10 +1,13 @@
 /*
+
+Exercício 6 - Reprovado!
 Dada uma lista de objetos que contém o 
 nome de um aluno e sua média final, 
 crie o método 'aprovados' que recebe 
 esta lista e retorna somente os alunos que foram aprovados.
 
 Para isto, utilize o método filter.
+
 */
 
 var alunos = [
