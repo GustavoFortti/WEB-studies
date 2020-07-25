@@ -33,3 +33,4 @@ const existeProdutosDatados = (produtos, dataReferencia = new Date()) => {
 }
 
 console.log(existeProdutosDatados(produtos, '2019-03-01'));
+
