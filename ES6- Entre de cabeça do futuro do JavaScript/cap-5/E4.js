@@ -9,24 +9,20 @@ Utilize o laço for...of e o break para não percorrer mais ruas que o necessár
 */
 
 const percorreRuas = (list, str) => {
-    // for(let el of list) {    //for of
-    //     console.log(el);
-    //     if(el === str) break;
-    // }
+    const arr = [];
+    for(let el of list) {    //for of
+        arr.push(el);
+        if(el === str) break;
+    }
+    return arr;
     
-    return list.reduce((Els, El) => {
-        Els.push(El);
-        if(El === str) return Els;
-        return Els;
-    }, []);
-
-    // return list.reduce((Elements, El) => {
-    //     if(!Elements.find(ElAux => ElAux === El)) {
+    // return list.reduce((Elements, El) => { // reduce
+    //     if(!Elements.find(ElAux => ElAux === str)) {
     //         Elements.push(El);
     //     }
-
     //     return Elements;
     // }, [])
+
 }
 
 const arr = percorreRuas(['Rua 1', 'Rua 2', 'Rua 3'], 'Rua 2');
